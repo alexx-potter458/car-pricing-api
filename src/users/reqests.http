@@ -2,6 +2,23 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email": "elena@yahoo.com",
+    "email": "elentggga@yahoo.com",
     "password": "sssss"
+}
+
+### findOne
+GET http://localhost:3000/auth/2
+
+### find
+GET http://localhost:3000/auth?email=alex@yahoo.com
+
+###delete
+DELETE http://localhost:3000/auth/1
+
+### update
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+    "email": "elena.matei@yahoo.com"
 }
