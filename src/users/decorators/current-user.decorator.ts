@@ -3,12 +3,9 @@ import {
     ExecutionContext,
 } from '@nestjs/common';
 
-import { UsersService } from '../users.service';
-
 export const CurrentUser = createParamDecorator(
     (data: never, context: ExecutionContext) => {
         const  request = context.switchToHttp().getRequest();
-        const  userId  = request.session.userId;
-        return 'reques';
+        return request.currentUser;
     }
 )
