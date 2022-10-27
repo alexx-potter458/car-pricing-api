@@ -1,10 +1,25 @@
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email": "alexandrua.olaru@yahoo.com",
+    "password": "potterhead"
+}
+
+###
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "alexandru@yahoo.com",
+    "email": "alexandrua.olaru@yahoo.com",
     "password": "potterhead"
 }
+
+###
+POST http://localhost:3000/auth/signout
+
+### findMe
+GET http://localhost:3000/auth/whoami
 
 ### findOne
 GET http://localhost:3000/auth/2
