@@ -3,10 +3,23 @@ Content-Type: application/json
 
 {
     "make": "Volkswagen",
-    "model": "Golf",
-    "mileage": 482000,
-    "year": 2002,
+    "model": "Transporter",
+    "mileage": 382000,
+    "year": 2010,
     "lng": 25,
     "lat": 45,
-    "price": 2000
+    "price": 9000
 }
+
+### approve
+
+PATCH http://localhost:3000/reports/3
+Content-Type: application/json
+
+{
+    "approved": true
+}
+
+###
+
+GET http://localhost:3000/reports?make=Volkswagen&model=Golf&lng=25&lat=45&year=2002&mileage=382000
