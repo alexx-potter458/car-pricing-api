@@ -8,7 +8,6 @@ import { ReportDto } from './dto/report.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { ApproveReportDto } from './dto/approve-report.dto';
 import { AdminGuard } from 'src/guards/admin.guard';
-import { query } from 'express';
 import { GetEstimateDto } from './dto/get-estimate.dto';
 
 @Controller('reports')
@@ -30,6 +29,6 @@ export class ReportsController {
 
     @Get()
     getEstimate(@Query() query: GetEstimateDto) {
-        console.log(query);
+        return this.reportsService.createEstimate(query);
     }
 }

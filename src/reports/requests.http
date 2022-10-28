@@ -2,8 +2,8 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make": "Volkswagen",
-    "model": "Transporter",
+    "make": "Audi",
+    "model": "A4",
     "mileage": 382000,
     "year": 2010,
     "lng": 25,
