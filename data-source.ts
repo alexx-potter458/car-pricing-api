@@ -8,9 +8,10 @@ switch(process.env.NODE_ENV) {
       type: 'sqlite', 
       database: 'db.sqlite',
       synchronize: false,
-      logging: false,
-      migrations: ['migrations/*.js'],
-      entities: ['**/*.entity.js'],
+      migrationsRun:true,
+      logging: true,
+      migrations: ['dist/migrations/**.js'],
+      entities: ['dist/**/**.entity.js'],
     }
     break;
   case 'test':
