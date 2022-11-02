@@ -9,7 +9,7 @@ switch(process.env.NODE_ENV) {
       database: 'db.sqlite',
       synchronize: false,
       migrationsRun:true,
-      logging: true,
+      logging: false,
       migrations: ['dist/migrations/**.js'],
       entities: ['dist/**/**.entity.js'],
     }

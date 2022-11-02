@@ -1,4 +1,4 @@
-import { Report } from 'src/reports/reports.entity';
+import { Report } from '../reports/reports.entity';
 import { AfterInsert, AfterUpdate, AfterRemove, Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
@@ -14,9 +14,6 @@ export class User {
 
     @Column({ default: true})
     admin: boolean;
-
-    @Column()
-    adminabc: boolean;
 
     @OneToMany(() => Report, (report) => report.user)
     reports: Report[];
