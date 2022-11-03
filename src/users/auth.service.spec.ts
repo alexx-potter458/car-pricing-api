@@ -1,3 +1,4 @@
+import { BadRequestException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { throws } from 'assert';
 import { AuthService } from './auth.service';
@@ -39,12 +40,10 @@ describe('AuthService', () => {
         expect(hash).toBeDefined();
     })
 
-    it("throws an error if email in use on signup", async (done) => {
+    it("throws an error if email in use on signup", async () => {
         fakeUsersService.find = () => Promise.resolve([{ id:1, email:'a', password: '1'} as User]);
-        try {
-            await service.signup('asdf@asdf.com', 'asdf');
-        } catch(err) {
-            done();
-        }
-    })
+
+        await expect(service.signup('asdf@asdf.com', 'asdf')).rejects.toThrow(BadRequestException);
+      
+    });
 })
