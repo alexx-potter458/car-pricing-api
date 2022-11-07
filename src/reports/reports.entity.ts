@@ -24,7 +24,7 @@ export class Report {
     @Column()
     year: number;
     
-    @Column()
+    @Column({name: 'kmage'})
     mileage: number;
 
     @Column({ default: false })
